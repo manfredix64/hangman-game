@@ -3,49 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HANGMAN</title>
-    <style>
-    .buttons-n-shit {
-      display: flex;
-      align-items: center;
-      gap: 15px;
-    }
-
-    .health {
-      display: flex;
-      gap: 8px;
-    }
-
-    .circle {
-      width: 35px;
-      height: 35px;
-      border: 3px solid black;
-      border-radius: 50%;
-      background: white;
-    }
-
-    .circle.full {
-      background: red;
-    }
-
-    /* button {
-      padding: 10px 15px;
-      font-size: 16px;
-    } */
-    </style>
+    <title>hang</title>
 </head>
 <body>
-    <div class="buttons-n-shit">
-
-        <button onclick="getData('animals')">animal</button>
-        <button onclick="addHealth()">abcabc</button>
-
-        <div id="health" class="health"></div>
-    </div>
+    
+    <button onclick="getData()">word</button>
 
     <h1 id="wrd"></h1>
-
-
+    <input placeholder="Letter"/>
     <script src="index.js"></script>
 </body>
 </html>
