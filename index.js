@@ -1,5 +1,6 @@
-async function getData(category) {
-  const url = `https://random-words-api.kushcreates.com/api?language=en&category=${category}&length=0&type=lowercase&words=1`;
+async function getData() {
+  // const url2 = "https://random-words-api.kushcreates.com/api?language=en&length=10&type=lowercase&words=1"
+  const url = "https://random-word-api.herokuapp.com/word";
   try {
     const response = await fetch(url);
     if (!response.ok) {
@@ -7,40 +8,13 @@ async function getData(category) {
     }
 
     const result = await response.json();
+    const word = result[0]
     console.log(result);
-    document.getElementById("wrd").innerHTML = result[0].word
-    
-    function showCircles() {
-      const container = document.getElementById("health");
-
-      container.innerHTML = ""
-      health = 0
-
-      for (let i = 0; i < result[0].length; i++) {
-        const circle = document.createElement("div");
-        circle.classList.add("circle");
-
-        container.appendChild(circle);
-      }
-    }
-
+    console.log(word);
+    console.log(word.length);
+    // document.getElementById("wrd").innerHTML = result[0].word;
+    document.getElementById("wrd").innerHTML = word;
   } catch (error) {
     console.error(error.message);
   }
-  showCircles()
 }
-
-let health = 0
-
-function addHealth() {
-  const circles = document.querySelectorAll(".circle");
-  
-  if (health < circles.length) {
-    circles[health].classList.add("full");
-    health++;
-  }
-}
-
-
-
-// showCircles()
