@@ -18,7 +18,7 @@ async function word() {
 
     // console.log(result);
     console.log(word);
-    console.log(word.length);
+    // console.log(word.length);
     // document.getElementById("wrd").innerHTML = result[0].word;
 
     document.getElementById("wrd").innerHTML = word;
@@ -59,8 +59,3 @@ function check() {
 
   document.getElementById("input").value = "";
 }
-// async function anotherFunction() {
-//   const myWord = await word();
-
-//   console.log(myWord);
-// }
