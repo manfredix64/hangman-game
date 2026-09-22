@@ -11,3 +11,15 @@
 .input {
     display: inline-block;
 }
+
+.circle {
+    width: 35px;
+    height: 35px;
+    border: 3px solid black;
+    border-radius: 50%;
+    background: white;
+}
+
+.circle.full {
+    background: red;
+}

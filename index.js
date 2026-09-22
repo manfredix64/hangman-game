@@ -1,6 +1,14 @@
 let wurd = "";
+let health = 0;
 
 async function word() {
+  health = 0;
+
+  const circles = document.querySelectorAll(".circle");
+  circles.forEach(circle => {
+    circle.classList.remove("full");
+  });
+
   // const url2 = "https://random-words-api.kushcreates.com/api?language=en&length=10&type=lowercase&words=1"
   const url = "https://random-word-api.herokuapp.com/word";
 
@@ -47,15 +55,38 @@ function generateParagraphs(word) {
 }
 
 function check() {
+
   const letter = document.getElementById("input").value.toLowerCase()
   // console.log(wurd);
   // console.log(letter);
 
+  let found = false;
+
   for (let i = 0; i < wurd.length; i++) {
     if (letter === wurd[i]) {
       document.getElementById(`p-${i}`).textContent = wurd[i];
+      found = true;
     }
   }
 
+  if (!found && health === 4) {
+    healthFunc("add");
+    alert("dead");
+  } else if (!found) {
+    healthFunc("add");
+  }
+
   document.getElementById("input").value = "";
+}
+
+function healthFunc(action) {
+
+  const circles = document.querySelectorAll(".circle");
+
+  if (action === "add") {
+    circles[health].classList.add("full");
+    health++;
+    console.log(health)
+  }
+  
 }
