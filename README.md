@@ -1,6 +1,6 @@
 # Sick ass hangman game
 
-Code by `manfredix`
+Code by `manfredix`  
 Assets by `A.V.`
 
 > ONLY WORKS ON PC RN!
