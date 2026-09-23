@@ -11,5 +11,5 @@ Made by `manfredix`
 - [x] Backend for random word
 - [x] Backend for checking input
 - [x] Backend for the gun assembly
-- [] Sick visuals
-- [] Mobile support
+- [ ] Sick visuals
+- [ ] Mobile support
