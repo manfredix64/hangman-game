@@ -1,6 +1,7 @@
 # Sick ass hangman game
 
-Made by `manfredix`
+Code by `manfredix`
+Assets by `A.V.`
 
 > ONLY WORKS ON PC RN!
 
@@ -12,5 +13,11 @@ Made by `manfredix`
 - [x] Backend for checking input
 - [x] Backend for the gun assembly
 - [ ] Sick visuals
-- - [ ] Start/Game over screen
+- - [x] Start screen
+- - [x] Gun
+- - [ ] Character/Player
+- - [ ] Background
+- - [ ] End (both win/lose) screen
+- - [ ] More...
+- [ ] Third party testing
 - [ ] Mobile support

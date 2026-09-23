@@ -1,6 +1,13 @@
+// document.getElementById("start-button").onclick = function () {
+//   document.getElementById("start-overlay").remove();
+// };
+function start() {
+  document.getElementById("start-overlay").remove();
+  word();
+}
+
 let wurd = "";
 let health = 0;
-
 async function word() {
   health = 0;
 

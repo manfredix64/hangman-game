@@ -1,3 +1,21 @@
+html {
+  scrollbar-width: none; /* Firefox */
+}
+
+html::-webkit-scrollbar {
+  display: none; /* Chrome, Edge, Safari */
+}
+
+#start-overlay {
+    position: fixed;
+    inset: 0;
+    background: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
 body {
     background-image: url("https://media.istockphoto.com/id/500133422/photo/street-scene-brick-wall-background-dark.jpg?s=612x612&w=0&k=20&c=_XQcNvwEXKceIjjXhv17c2Y_pJ1a0ge1gn3AV6AhZnQ=");
     background-repeat: no-repeat;
@@ -43,7 +61,6 @@ body {
     z-index: 1;
     user-select: none;
 }
-
 #gun-2 {
   border: 1px solid #0f0;
   position: relative;
