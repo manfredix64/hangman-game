@@ -1,3 +1,5 @@
 # Sick ass hangman game
 
-made by `manfredix`
+Made by `manfredix`
+
+> ONLY WORKS ON PC RN!

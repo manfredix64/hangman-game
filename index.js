@@ -4,6 +4,10 @@ let health = 0;
 async function word() {
   health = 0;
 
+  for (let i = 1; i < 6; i++) {
+    document.getElementById(`gun-${i}`).style.opacity = 0;
+  }
+
   const circles = document.querySelectorAll(".circle");
   circles.forEach(circle => {
     circle.classList.remove("full");
@@ -69,10 +73,7 @@ function check() {
     }
   }
 
-  if (!found && health === 4) {
-    healthFunc("add");
-    alert("dead");
-  } else if (!found) {
+  if (!found) {
     healthFunc("add");
   }
 
@@ -86,6 +87,7 @@ function healthFunc(action) {
   if (action === "add") {
     circles[health].classList.add("full");
     health++;
+    document.getElementById(`gun-${health}`).style.opacity = 1
     console.log(health)
   }
   

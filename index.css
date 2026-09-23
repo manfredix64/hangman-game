@@ -32,3 +32,47 @@ body {
 .circle.full {
     background: red;
 }
+
+/* .gun {
+    border: 1px solid #000;
+} */
+
+#gun-1 {
+    border: 1px solid #f00;
+    position: relative;
+    z-index: 1;
+    user-select: none;
+}
+
+#gun-2 {
+  border: 1px solid #0f0;
+  position: relative;
+  z-index: 2;
+  /* top: -12px; */
+  left: -295px;
+  user-select: none;
+}
+#gun-3 {
+  border: 1px solid #0f0;
+  position: relative;
+  z-index: 3;
+  /* top: -12px; */
+  left: -595px;
+  user-select: none;
+}
+#gun-4 {
+  border: 1px solid #0f0;
+  position: relative;
+  z-index: 4;
+  /* top: -12px; */
+  left: -870px;
+  user-select: none;
+}
+#gun-5 {
+  border: 1px solid #0f0;
+  position: relative;
+  z-index: 5;
+  top: -218px;
+  /* left: -870px; */
+  user-select: none;
+}
