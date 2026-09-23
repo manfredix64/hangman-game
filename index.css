@@ -1,9 +1,9 @@
 html {
-  scrollbar-width: none; /* Firefox */
+  scrollbar-width: none;
 }
 
 html::-webkit-scrollbar {
-  display: none; /* Chrome, Edge, Safari */
+  display: none;
 }
 
 #start-overlay {
@@ -14,7 +14,10 @@ html::-webkit-scrollbar {
     justify-content: center;
     align-items: center;
     z-index: 9999;
+    /* transition: opacity 0.6s ease, visibility 0.6s ease; */
 }
+
+/* ^ AI (GPT-5.6 LUNA) MADE EVERYTHING ABOVE THIS LINE ^ */
 
 body {
     background-image: url("https://media.istockphoto.com/id/500133422/photo/street-scene-brick-wall-background-dark.jpg?s=612x612&w=0&k=20&c=_XQcNvwEXKceIjjXhv17c2Y_pJ1a0ge1gn3AV6AhZnQ=");
@@ -36,6 +39,9 @@ body {
 }
 
 .input {
+    display: inline-block;
+}
+.health > div {
     display: inline-block;
 }
 

@@ -1,6 +1,3 @@
-// document.getElementById("start-button").onclick = function () {
-//   document.getElementById("start-overlay").remove();
-// };
 function start() {
   document.getElementById("start-overlay").remove();
   word();
@@ -57,8 +54,6 @@ function generateParagraphs(word) {
     const p = document.createElement("p");
 
     p.id = `p-${i}`;
-    // p.textContent = `Paragraph ${i + 1}`;
-    // p.textContent = word[i]
     p.textContent = " ";
 
     letters.appendChild(p);
