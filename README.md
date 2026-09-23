@@ -1,7 +1,7 @@
 # Sick ass hangman game
 
-Code by `manfredix`  
-Assets by `A.V.`
+Code by `manfredix` [Discord](https://discord.com/users/630125088427212811)  
+Assets by `A.V.` [Discord](https://discord.com/users/724566173324410890)
 
 > ONLY WORKS ON PC RN!
 
