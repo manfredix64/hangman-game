@@ -1,3 +1,9 @@
+body {
+    background-image: url("https://media.istockphoto.com/id/500133422/photo/street-scene-brick-wall-background-dark.jpg?s=612x612&w=0&k=20&c=_XQcNvwEXKceIjjXhv17c2Y_pJ1a0ge1gn3AV6AhZnQ=");
+    background-repeat: no-repeat;
+    background-size: cover
+}
+
 #letters > p {
     display: inline-block;
     outline: solid pink;
@@ -6,6 +12,9 @@
     margin-right: 15px;
     text-transform: capitalize;
     font-weight: bolder;
+    background-color: black;
+    color: white;
+    font-size: 20px;
 }
 
 .input {
@@ -17,7 +26,7 @@
     height: 35px;
     border: 3px solid black;
     border-radius: 50%;
-    background: white;
+    background-color: white;
 }
 
 .circle.full {
