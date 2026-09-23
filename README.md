@@ -12,4 +12,5 @@ Made by `manfredix`
 - [x] Backend for checking input
 - [x] Backend for the gun assembly
 - [ ] Sick visuals
+- [ ] Start/Game over screen
 - [ ] Mobile support
