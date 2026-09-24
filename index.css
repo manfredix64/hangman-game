@@ -1,9 +1,53 @@
 html {
   scrollbar-width: none;
+  font-family: "Lucida Console" , monospace;
 }
 
 html::-webkit-scrollbar {
   display: none;
+}
+
+#start-button {
+  font-weight: bold;
+  background: #111;
+  color: orange;
+
+  border: 2px solid orange;
+  border-radius: 8px;
+  padding: 12px 24px;
+
+  cursor: pointer;
+
+  box-shadow: 
+    0 0 5px orange,
+    0 0 15px orange,
+    0 0 30px orange;
+
+  animation: neonPulse 2s infinite ease-in-out;
+}
+
+@keyframes neonPulse {
+    0%, 100% {
+        box-shadow: 
+        0 0 5px orange,
+        0 0 15px orange,
+        0 0 30px orange;
+    }
+
+    50% {
+        box-shadow:
+        0 0 2px orange,
+        0 0 8px orange,
+        0 0 15px orange;
+    }
+}
+
+/* ^ AI (GPT-5.6 LUNA) MADE EVERYTHING ABOVE THIS LINE ^ */
+
+body {
+    background-image: url("https://media.istockphoto.com/id/500133422/photo/street-scene-brick-wall-background-dark.jpg?s=612x612&w=0&k=20&c=_XQcNvwEXKceIjjXhv17c2Y_pJ1a0ge1gn3AV6AhZnQ=");
+    background-repeat: no-repeat;
+    background-size: cover
 }
 
 #start-overlay {
@@ -14,15 +58,54 @@ html::-webkit-scrollbar {
     justify-content: center;
     align-items: center;
     z-index: 9999;
-    /* transition: opacity 0.6s ease, visibility 0.6s ease; */
+    transition: opacity 0.6s ease, visibility 0.6s ease;
 }
 
-/* ^ AI (GPT-5.6 LUNA) MADE EVERYTHING ABOVE THIS LINE ^ */
+#start-overlay > * {
+  transition: opacity 0.6s ease;
+}
+#start-overlay.fade-content > * {
+  opacity: 0;
+}
+#start-overlay div {
+  position: absolute;
+  top: 10px;
+  left: 20px;
+  color: white;
+}
 
-body {
-    background-image: url("https://media.istockphoto.com/id/500133422/photo/street-scene-brick-wall-background-dark.jpg?s=612x612&w=0&k=20&c=_XQcNvwEXKceIjjXhv17c2Y_pJ1a0ge1gn3AV6AhZnQ=");
-    background-repeat: no-repeat;
-    background-size: cover
+#warning {
+    position: fixed;
+    inset: 0;
+    background: black;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10000;
+    visibility: hidden;
+}
+
+#warning p {
+    opacity: 0;
+    transition: opacity 0.6s ease;
+}
+
+#warning.show {
+    visibility: visible;
+}
+
+#warning.show p {
+    opacity: 1;
+}
+
+#warning.fade-text p {
+    opacity: 0;
+}
+
+#warning.fade-out {
+    opacity: 0;
+    transition: opacity 0.6s ease;
 }
 
 #letters > p {

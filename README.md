@@ -3,6 +3,9 @@
 Code by `manfredix` [Discord](https://discord.com/users/630125088427212811)  
 Assets by `A.V.` [Discord](https://discord.com/users/724566173324410890)
 
+Hours worked on project:
+7 and still counting...
+
 > ONLY WORKS ON PC RN!
 
 ---

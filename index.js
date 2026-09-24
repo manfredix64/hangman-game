@@ -1,6 +1,41 @@
+// function start() {
+//   document.getElementById("start-overlay").remove();
+//   word();
+// }
+
 function start() {
-  document.getElementById("start-overlay").remove();
-  word();
+    const startOverlay = document.getElementById("start-overlay");
+    const warning = document.getElementById("warning");
+
+    // Fade out HANGMAN + START
+    startOverlay.classList.add("fade-content");
+
+    // Wait for fade-out, then show warning
+    setTimeout(() => {
+        warning.classList.add("show");
+
+        // Keep warning text visible for 2 seconds
+        setTimeout(() => {
+            // Fade out ONLY the warning text
+            warning.classList.add("fade-text");
+
+            // Wait for text to disappear
+            setTimeout(() => {
+                // Now fade out the black screen
+                warning.classList.add("fade-out");
+
+                // Wait for black screen to fade away
+                setTimeout(() => {
+                    startOverlay.remove();
+                    warning.remove();
+                    word();
+                }, 600);
+
+            }, 1200);
+
+        }, 4000);
+
+    }, 1000);
 }
 
 let wurd = "";
