@@ -2,7 +2,6 @@ html {
   scrollbar-width: none;
   font-family: "Lucida Console" , monospace;
 }
-
 html::-webkit-scrollbar {
   display: none;
 }
@@ -33,7 +32,6 @@ html::-webkit-scrollbar {
         0 0 15px orange,
         0 0 30px orange;
     }
-
     50% {
         box-shadow:
         0 0 2px orange,
@@ -45,11 +43,17 @@ html::-webkit-scrollbar {
 /* ^ AI (GPT-5.6 LUNA) MADE EVERYTHING ABOVE THIS LINE ^ */
 
 body {
-    background-image: url("https://media.istockphoto.com/id/500133422/photo/street-scene-brick-wall-background-dark.jpg?s=612x612&w=0&k=20&c=_XQcNvwEXKceIjjXhv17c2Y_pJ1a0ge1gn3AV6AhZnQ=");
-    background-repeat: no-repeat;
-    background-size: cover
+    background-color: black;
 }
 
+@keyframes fadeOut {
+    from {opacity: 1;}
+    to {opacity: 0;}
+}
+@keyframes fadeIn {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
 #start-overlay {
     position: fixed;
     inset: 0;
@@ -57,15 +61,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    z-index: 9999;
-    transition: opacity 0.6s ease, visibility 0.6s ease;
-}
-
-#start-overlay > * {
-  transition: opacity 0.6s ease;
-}
-#start-overlay.fade-content > * {
-  opacity: 0;
+    z-index: 999;
 }
 #start-overlay div {
   position: absolute;
@@ -73,7 +69,12 @@ body {
   left: 20px;
   color: white;
 }
-
+#start-overlay.fadeOut > * {
+    animation: fadeOut 2s linear;
+}
+#warning.fadeIn > * {
+    animation: fadeIn 2s linear;
+}
 #warning {
     position: fixed;
     inset: 0;
@@ -82,31 +83,19 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    z-index: 10000;
-    visibility: hidden;
+    z-index: 998;
+}
+#warning img {
+    position: absolute;
+    top: 250px;
+}
+#warning.fadeOut > * {
+    animation: fadeOut 2s linear;
+}
+#main.fadeIn > * {
+    animation: fadeIn 2s linear;
 }
 
-#warning p {
-    opacity: 0;
-    transition: opacity 0.6s ease;
-}
-
-#warning.show {
-    visibility: visible;
-}
-
-#warning.show p {
-    opacity: 1;
-}
-
-#warning.fade-text p {
-    opacity: 0;
-}
-
-#warning.fade-out {
-    opacity: 0;
-    transition: opacity 0.6s ease;
-}
 
 #letters > p {
     display: inline-block;
@@ -122,12 +111,16 @@ body {
 }
 
 .input {
-    display: inline-block;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* bottom: 500px; */
 }
+
 .health > div {
     display: inline-block;
 }
-
 .circle {
     width: 35px;
     height: 35px;
@@ -135,50 +128,44 @@ body {
     border-radius: 50%;
     background-color: white;
 }
-
 .circle.full {
     background: red;
 }
 
-/* .gun {
-    border: 1px solid #000;
-} */
-
-#gun-1 {
-    border: 1px solid #f00;
+.gun {
     position: relative;
-    z-index: 1;
+    width: 290px;
+    height: 210px;
+    margin: 20px auto;
+    transform: translateX(150px);
+}
+.gun img {
+    position: absolute;
+    width: 290px;
+    height: 210px;
     user-select: none;
+    /* -------- */
+    -webkit-transform: scaleX(-1);
+    transform: scaleX(-1);
+    /* w3schools */
+}
+#gun-1 {
+    border: 1px solid #0f0;
+    z-index: 1;
 }
 #gun-2 {
   border: 1px solid #0f0;
-  position: relative;
   z-index: 2;
-  /* top: -12px; */
-  left: -295px;
-  user-select: none;
 }
 #gun-3 {
   border: 1px solid #0f0;
-  position: relative;
   z-index: 3;
-  /* top: -12px; */
-  left: -595px;
-  user-select: none;
 }
 #gun-4 {
   border: 1px solid #0f0;
-  position: relative;
   z-index: 4;
-  /* top: -12px; */
-  left: -870px;
-  user-select: none;
 }
 #gun-5 {
   border: 1px solid #0f0;
-  position: relative;
   z-index: 5;
-  top: -218px;
-  /* left: -870px; */
-  user-select: none;
 }

@@ -1,10 +1,10 @@
 # Sickass hangman game
 
 Code by `manfredix` [Discord](https://discord.com/users/630125088427212811)  
-Assets by `A.V.` [Discord](https://discord.com/users/724566173324410890)
+Assets by `A.V.`
 
 Hours worked on project:
-7 and still counting...
+12 and still counting...
 
 > ONLY WORKS ON PC RN!
 
@@ -15,9 +15,12 @@ Hours worked on project:
 - [x] Backend for random word
 - [x] Backend for checking input
 - [x] Backend for the gun assembly
+- [x] Backend for start animation
+- [ ] Backend for wictory
+- [ ] Backend for fail/loss
 - [ ] Sick visuals:
 - - [x] Gun
-- - [ ] Start screen/animation
+- - [x] Start screen
 - - [ ] Character/Player
 - - [ ] Background
 - - [ ] Win screen

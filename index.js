@@ -3,43 +3,70 @@
 //   word();
 // }
 
+// function start() {
+//     const startOverlay = document.getElementById("start-overlay");
+//     const warning = document.getElementById("warning");
+
+//     // Fade out HANGMAN + START
+//     startOverlay.classList.add("fade-content");
+
+//     // Wait for fade-out, then show warning
+//     setTimeout(() => {
+//         warning.classList.add("show");
+
+//         // Keep warning text visible for 2 seconds
+//         setTimeout(() => {
+//             // Fade out ONLY the warning text
+//             warning.classList.add("fade-text");
+
+//             // Wait for text to disappear
+//             setTimeout(() => {
+//                 // Now fade out the black screen
+//                 warning.classList.add("fade-out");
+
+//                 // Wait for black screen to fade away
+//                 setTimeout(() => {
+//                     startOverlay.remove();
+//                     warning.remove();
+//                     word();
+//                 }, 600);
+
+//             }, 1200);
+
+//         }, 4000);
+
+//     }, 1000);
+// }
+
 function start() {
-    const startOverlay = document.getElementById("start-overlay");
-    const warning = document.getElementById("warning");
+  const startOverlay = document.getElementById("start-overlay");
+  const warning = document.getElementById("warning");
 
-    // Fade out HANGMAN + START
-    startOverlay.classList.add("fade-content");
+  startOverlay.classList.add("fadeOut");
 
-    // Wait for fade-out, then show warning
+  setTimeout(() => {
+    startOverlay.remove();
+    warning.classList.add("fadeIn")
+
     setTimeout(() => {
-        warning.classList.add("show");
+      warning.classList.add("fadeOut");
 
-        // Keep warning text visible for 2 seconds
+      setTimeout(() => {
+        warning.remove();
+        word();
+        document.getElementById("main").classList.add("fadeIn");
+
         setTimeout(() => {
-            // Fade out ONLY the warning text
-            warning.classList.add("fade-text");
-
-            // Wait for text to disappear
-            setTimeout(() => {
-                // Now fade out the black screen
-                warning.classList.add("fade-out");
-
-                // Wait for black screen to fade away
-                setTimeout(() => {
-                    startOverlay.remove();
-                    warning.remove();
-                    word();
-                }, 600);
-
-            }, 1200);
-
-        }, 4000);
-
-    }, 1000);
-}
+          document.getElementById("main").classList.remove("fadeIn");
+        }, 1850)
+      }, 1850)
+    }, 3500)
+  }, 1850)
+};
 
 let wurd = "";
 let health = 0;
+
 async function word() {
   health = 0;
 
@@ -98,6 +125,10 @@ function generateParagraphs(word) {
 function check() {
 
   const letter = document.getElementById("input").value.toLowerCase()
+
+  if (letter == "") {
+    return;
+  }
   // console.log(wurd);
   // console.log(letter);
 
