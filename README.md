@@ -16,7 +16,7 @@ Hours worked on project:
 - [x] Backend for checking input
 - [x] Backend for the gun assembly
 - [x] Backend for start animation
-- [ ] Backend for wictory
+- [ ] Backend for victory
 - [ ] Backend for fail/loss
 - [ ] Sick visuals:
 - - [x] Gun
