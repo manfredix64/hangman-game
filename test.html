@@ -4,37 +4,27 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Simple Spotlight</title>
-
 <style>
-  * {
-    box-sizing: border-box;
-  }
-
+  * { box-sizing: border-box; }
   html, body {
     margin: 0;
     width: 100%;
     height: 100%;
-    background: #000;
+    background: black;
     overflow: hidden;
     font-family: Arial, sans-serif;
   }
-
-  .scene {
-    position: relative;
-    width: 100vw;
-    height: 100vh;
-  }
+  .scene { position: relative; width: 100vw; height: 100vh; }
 
   /* Lamp */
   .lamp {
     position: absolute;
     top: 0;
-    left: 25%;
+    left: 50%;
     width: 3px;
     height: 80px;
     background: #222;
   }
-
   .bulb {
     position: absolute;
     top: 68px;
@@ -44,23 +34,32 @@
     transform: translateX(-50%);
     border-radius: 50%;
     background: #ffd76a;
-    box-shadow: 0 0 25px #ffd76a, 0 0 60px rgba(255, 215, 106, .4);
+
+    /* ADJUST BULB GLOW HERE */
+    box-shadow:
+      0 0 25px #ffd76a,
+      0 0 70px rgba(255, 215, 106, .5);
   }
 
-  /* Light */
+  /* Light cone */
   .light {
     position: absolute;
     top: 85px;
-    /* left: calc(25% - 90px); */
-    left: 11.065%;
-    width: 360px;
+    left: 50%;
+    transform: translateX(-50%);
+
+    /* ADJUST LIGHT WIDTH HERE */
+    width: 1750px;
     height: 650px;
+
+    /* ADJUST LIGHT BRIGHTNESS HERE */
     background: linear-gradient(
       to bottom,
-      rgba(255, 215, 106, .28),
-      rgba(255, 215, 106, .07) 55%,
+      rgba(255, 215, 106, .45),
+      rgba(255, 215, 106, .25) 55%,
       transparent
     );
+
     clip-path: polygon(50% 0, 100% 100%, 0 100%);
     filter: blur(4px);
   }
@@ -69,7 +68,7 @@
   .text {
     position: absolute;
     top: 42%;
-    left: 25%;
+    left: 50%;
     transform: translate(-50%, -50%);
     color: #050505;
     /* background: rgba(255, 230, 160, .72); */
@@ -81,21 +80,11 @@
   }
 </style>
 </head>
-
 <body>
   <div class="scene">
-
-    <div class="lamp">
-      <div class="bulb"></div>
-    </div>
-
+    <div class="lamp"><div class="bulb"></div></div>
     <div class="light"></div>
-
-    <div class="text">
-      Only what<br>
-      needs to be seen.
-    </div>
-
+    <div class="text">Only what<br>needs to be seen.</div>
   </div>
 </body>
 </html>

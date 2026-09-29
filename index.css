@@ -96,11 +96,16 @@ body {
     animation: fadeIn 2s linear;
 }
 
-
+#letters {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 #letters > p {
     display: inline-block;
-    outline: solid pink;
-    border-radius: 8px;
+    outline: solid orange;
+    border-radius: 3px;
     padding: 10px;
     margin-right: 15px;
     text-transform: capitalize;
@@ -111,12 +116,44 @@ body {
 }
 
 .input {
-    position: relative;
+    position: fixed;
     display: flex;
     justify-content: center;
     align-items: center;
-    /* bottom: 500px; */
+    bottom: 100px;
+    left: 38%;
 }
+.input input {
+    width: 250px;
+    padding: 12px;
+    outline: none;
+    border: 3px solid;
+    border-color: black;
+    background-color: black;
+    color: white;
+    transition: 0.5s;
+    border-radius: 8px;
+    text-align: center;
+    text-transform: capitalize;
+    font-family: "Lucida Console" , monospace;
+    font-weight: bolder;
+    font-size: larger;
+    animation-name: blink;
+    animation-duration: 3s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+.input input:focus {
+    border: 3px solid orange;
+    box-shadow: 0 0 30px orange;
+    animation: none;
+}
+@keyframes blink {
+    from {border-color: black;}
+    to {border-color: orange; box-shadow: 0 0 20px orange;}
+}
+
 
 .health > div {
     display: inline-block;
