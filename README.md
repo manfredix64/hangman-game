@@ -26,5 +26,5 @@ Hours worked on project:
 - - [ ] Win screen
 - - [ ] Lose/Death animation
 - - [ ] More...
-- [ ] Third party testing
+- [x] Third party testing
 - [ ] Mobile support

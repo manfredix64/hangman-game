@@ -101,7 +101,12 @@ function check() {
     }
   }
 
-  if (!found) {
+  if (!found && health === 4) {
+    healthFunc("add");
+    for (let i = 0; i < wurd.length; i++) {
+      document.getElementById(`p-${i}`).textContent = wurd[i]
+    }
+  } else if (!found) {
     healthFunc("add");
   }
 
