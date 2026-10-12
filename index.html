@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="A dark, arcade-inspired hangman game."
+    />
+    <meta name="theme-color" content="#080808" />
+    <title>Hangman</title>
+    <link rel="stylesheet" href="./index.css" />
+    <script type="module" src="./index.js"></script>
+  </head>
+  <body>
+    <section id="start-overlay" class="screen start-screen" aria-labelledby="welcome-title">
+    <a
+      class="repo-link"
+      href="https://github.com/manfredix64/hangman-game"
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label="View this project on GitHub"
+      title="View source on GitHub"
+    >
+      <svg viewBox="0 0 24 24" aria-hidden="true">
+        <path fill="currentColor" d="M12 .9a11.1 11.1 0 0 0-3.51 21.63c.55.1.76-.24.76-.54v-2.08c-3.1.67-3.76-1.32-3.76-1.32-.5-1.28-1.23-1.62-1.23-1.62-1.01-.69.08-.68.08-.68 1.12.08 1.7 1.15 1.7 1.15.99 1.69 2.6 1.2 3.23.92.1-.72.39-1.2.7-1.48-2.47-.28-5.07-1.24-5.07-5.5 0-1.21.43-2.2 1.14-2.98-.12-.28-.5-1.42.11-2.95 0 0 .93-.3 3.05 1.14a10.6 10.6 0 0 1 5.55 0c2.12-1.44 3.04-1.14 3.04-1.14.61 1.53.23 2.67.12 2.95.71.78 1.13 1.77 1.13 2.98 0 4.27-2.6 5.21-5.08 5.49.4.35.75 1.02.75 2.06v3.06c0 .3.2.65.77.54A11.1 11.1 0 0 0 12 .9Z"/>
+      </svg>
+    </a>
+
+      <div class="start-copy">
+        <h1 id="welcome-title">HANGMAN</h1>
+        <p>Game by MZ and AV</p>
+      </div>
+      <button id="start-button" class="button button-primary" type="button">
+        Start
+      </button>
+    </section>
+
+    <section id="warning" class="screen warning-screen" aria-labelledby="warning-title" hidden>
+      <div class="warning-content">
+        <img src="./img/warning-removebg-preview.png" alt="" />
+        <h2 id="warning-title">Flashing lights warning</h2>
+        <p>This game contains flashing visual effects.</p>
+      </div>
+    </section>
+
+    <main id="main" class="game" hidden>
+    <div class="spotlight-scene" aria-hidden="true">
+      <div class="spotlight-lamp"><span class="spotlight-bulb"></span></div>
+      <div class="spotlight-cone"></div>
+    </div>
+
+      <header class="game-header">
+        <button id="new-game-button" class="button button-secondary" type="button">
+          New game
+        </button>
+      </header>
+
+      <p id="status-message" class="sr-only" role="status" aria-live="polite" aria-atomic="true"></p>
+
+      <section
+        id="hostage-stage"
+        class="hostage-stage"
+        aria-label="Game scene"
+      >
+        <div class="stage-floor" aria-hidden="true"></div>
+        <img class="hostage-image hostage-start" src="./img/guy_start.png" alt="A person tied to a chair" />
+        <img class="hostage-image hostage-victory" src="./img/guy_victory.png" alt="" />
+        <img class="hostage-image hostage-death" src="./img/guy_death.png" alt="" />
+
+        <div class="gun" role="img" aria-label="A weapon assembling with each incorrect guess">
+          <img src="./img/detala1.png" alt="" />
+          <img src="./img/detala2.png" alt="" />
+          <img src="./img/detala3.png" alt="" />
+          <img src="./img/detala4.png" alt="" />
+          <img src="./img/detala5.png" alt="" />
+        </div>
+      </section>
+
+      <ol id="letters" class="word-display" aria-label="Word to guess"></ol>
+
+      <div id="health" class="health" role="img" aria-label="0 of 5 incorrect guesses">
+        <span class="circle" aria-hidden="true"></span>
+        <span class="circle" aria-hidden="true"></span>
+        <span class="circle" aria-hidden="true"></span>
+        <span class="circle" aria-hidden="true"></span>
+        <span class="circle" aria-hidden="true"></span>
+      </div>
+
+      <section id="result-message" class="result-message" aria-live="polite" hidden>
+        <h2 id="result-title"></h2>
+        <p id="result-copy"></p>
+      </section>
+
+      <form id="guess-form" class="guess-form" aria-label="Guess a letter" novalidate>
+        <label for="guess-input">Enter one letter</label>
+        <div class="guess-controls">
+          <input
+            id="guess-input"
+            name="guess"
+            type="text"
+            maxlength="1"
+            autocapitalize="none"
+            autocomplete="off"
+            autocorrect="off"
+            spellcheck="false"
+            disabled
+          />
+          <button id="submit-guess" class="button button-primary" type="submit" disabled>
+            Guess
+          </button>
+        </div>
+      </form>
+    </main>
+
+    <div id="screen-flash" class="screen-flash" aria-hidden="true"></div>
+  </body>
+</html>
