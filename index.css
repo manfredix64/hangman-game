@@ -56,17 +56,17 @@ body.spotlight-active {
   z-index: 2;
   top: 0;
   left: 50%;
-  width: 3px;
-  height: 60px;
+  width: 0.16%;
+  height: 5.6%;
   background: #222;
 }
 
 .spotlight-bulb {
   position: absolute;
-  top: 48px;
+  top: 4.45%;
   left: 50%;
-  width: 28px;
-  height: 38px;
+  width: 1.46%;
+  height: 3.52%;
   transform: translateX(-50%);
   border-radius: 50%;
   background: #51472b;
@@ -76,17 +76,14 @@ body.spotlight-active {
 
 .spotlight-cone {
   position: absolute;
-  top: 65px;
+  top: 6%;
   left: 50%;
   /*
-   * Size the beam from viewport height, not fixed pixel caps. This keeps the
-   * cone's proportions consistent on different desktop monitor dimensions
-   * and wide enough to reach both sides of ultrawide screens.
+   * The artboard is always 16:9, so a width relative to it gives the lamp
+   * beam the same shape on every 16:9 display. A 220% beam keeps it broad.
    */
-  width: 320vh;
-  height: calc(100vh - 65px);
-  width: 320dvh;
-  height: calc(100dvh - 65px);
+  width: 220%;
+  height: 94%;
   transform: translateX(-50%);
   background: linear-gradient(
     to bottom,
@@ -331,11 +328,30 @@ input:focus-visible {
   background: transparent;
 }
 
+/*
+ * Treat a 16:9 rectangle as the design canvas. On a viewport with a different
+ * ratio, scale the same canvas to cover the viewport and crop the overflow.
+ * This keeps the lamp, cone, character, shotgun, and HUD in a stable layout.
+ */
+.game-frame {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: max(100vw, 177.7778vh);
+  height: max(100vh, 56.25vw);
+  width: max(100dvw, 177.7778dvh);
+  height: max(100dvh, 56.25dvw);
+  overflow: hidden;
+  isolation: isolate;
+  transform: translate(-50%, -50%);
+  background: transparent;
+}
+
 .game-header {
   position: absolute;
   z-index: 5;
-  top: 1.25rem;
-  right: clamp(1rem, 4vw, 3rem);
+  top: 1.5%;
+  right: 2.5%;
   display: flex;
   width: auto;
   min-height: 2.75rem;
@@ -431,10 +447,10 @@ input:focus-visible {
   position: absolute;
   z-index: 4;
   /* Keep the shotgun clear of the hostage's face and level with the head. */
-  top: 3vh;
+  top: 3.5%;
   right: auto;
-  left: clamp(20rem, 43vh, 34rem);
-  width: clamp(23rem, 55vh, 34rem);
+  left: 24%;
+  width: 27.5%;
   aspect-ratio: 290 / 210;
   margin: 0;
   opacity: 1;
@@ -467,12 +483,12 @@ input:focus-visible {
 .word-display {
   position: absolute;
   z-index: 5;
-  top: clamp(5.5rem, 12vh, 8rem);
-  right: clamp(1rem, 4vw, 3rem);
+  top: 10.5%;
+  right: 2.5%;
   display: flex;
-  width: min(53vw, 48rem);
+  width: min(40%, 48rem);
   min-height: 3.25rem;
-  max-width: calc(100vw - 2rem);
+  max-width: calc(100% - 2rem);
   margin: 0;
   padding: 0.25rem 0.15rem;
   flex-wrap: wrap;
@@ -498,10 +514,10 @@ input:focus-visible {
 .health {
   position: absolute;
   z-index: 5;
-  top: clamp(9rem, 18.5vh, 10.5rem);
-  right: clamp(1rem, 4vw, 3rem);
+  top: 15.8%;
+  right: 2.5%;
   display: flex;
-  width: min(53vw, 48rem);
+  width: min(40%, 48rem);
   justify-content: center;
   gap: 0.65rem;
 }
@@ -523,9 +539,9 @@ input:focus-visible {
 .result-message {
   position: absolute;
   z-index: 5;
-  right: clamp(1rem, 4vw, 3rem);
-  bottom: clamp(1.5rem, 5vh, 3.5rem);
-  width: min(34rem, 44vw);
+  right: 2.5%;
+  bottom: 4%;
+  width: min(34rem, 42%);
   margin: 0;
   text-align: center;
   text-shadow: 0 2px 12px #000;
@@ -557,9 +573,9 @@ input:focus-visible {
 .guess-form {
   position: absolute;
   z-index: 5;
-  top: clamp(12rem, 24.5vh, 15rem);
-  right: clamp(1rem, 4vw, 3rem);
-  width: min(27rem, 46vw);
+  top: 21.5%;
+  right: 2.5%;
+  width: min(27rem, 46%);
   margin: 0;
   padding: 0;
 }
@@ -744,24 +760,3 @@ input:focus-visible {
   }
 }
 
-@media (max-height: 700px) and (min-width: 761px) {
-  .game-header {
-    top: 0.65rem;
-  }
-
-  .word-display {
-    top: 4.5rem;
-  }
-
-  .health {
-    top: 8rem;
-  }
-
-  .guess-form {
-    top: 11rem;
-  }
-
-  .letter {
-    min-height: 2.2rem;
-  }
-}

@@ -45,72 +45,74 @@
     </section>
 
     <main id="main" class="game" hidden>
-    <div class="spotlight-scene" aria-hidden="true">
-      <div class="spotlight-lamp"><span class="spotlight-bulb"></span></div>
-      <div class="spotlight-cone"></div>
-    </div>
-
-      <header class="game-header">
-        <button id="new-game-button" class="button button-secondary" type="button">
-          New game
-        </button>
-      </header>
-
-      <p id="status-message" class="sr-only" role="status" aria-live="polite" aria-atomic="true"></p>
-
-      <section
-        id="hostage-stage"
-        class="hostage-stage"
-        aria-label="Game scene"
-      >
-        <div class="stage-floor" aria-hidden="true"></div>
-        <img class="hostage-image hostage-start" src="./img/guy_start.png" alt="A person tied to a chair" />
-        <img class="hostage-image hostage-victory" src="./img/guy_victory.png" alt="" />
-        <img class="hostage-image hostage-death" src="./img/guy_death.png" alt="" />
-
-        <div class="gun" role="img" aria-label="A weapon assembling with each incorrect guess">
-          <img src="./img/detala1.png" alt="" />
-          <img src="./img/detala2.png" alt="" />
-          <img src="./img/detala3.png" alt="" />
-          <img src="./img/detala4.png" alt="" />
-          <img src="./img/detala5.png" alt="" />
-        </div>
-      </section>
-
-      <ol id="letters" class="word-display" aria-label="Word to guess"></ol>
-
-      <div id="health" class="health" role="img" aria-label="0 of 5 incorrect guesses">
-        <span class="circle" aria-hidden="true"></span>
-        <span class="circle" aria-hidden="true"></span>
-        <span class="circle" aria-hidden="true"></span>
-        <span class="circle" aria-hidden="true"></span>
-        <span class="circle" aria-hidden="true"></span>
+      <div class="game-frame">
+      <div class="spotlight-scene" aria-hidden="true">
+        <div class="spotlight-lamp"><span class="spotlight-bulb"></span></div>
+        <div class="spotlight-cone"></div>
       </div>
 
-      <section id="result-message" class="result-message" aria-live="polite" hidden>
-        <h2 id="result-title"></h2>
-        <p id="result-copy"></p>
-      </section>
-
-      <form id="guess-form" class="guess-form" aria-label="Guess a letter" novalidate>
-        <label for="guess-input">Enter one letter</label>
-        <div class="guess-controls">
-          <input
-            id="guess-input"
-            name="guess"
-            type="text"
-            maxlength="1"
-            autocapitalize="none"
-            autocomplete="off"
-            autocorrect="off"
-            spellcheck="false"
-            disabled
-          />
-          <button id="submit-guess" class="button button-primary" type="submit" disabled>
-            Guess
+        <header class="game-header">
+          <button id="new-game-button" class="button button-secondary" type="button">
+            New game
           </button>
+        </header>
+
+        <p id="status-message" class="sr-only" role="status" aria-live="polite" aria-atomic="true"></p>
+
+        <section
+          id="hostage-stage"
+          class="hostage-stage"
+          aria-label="Game scene"
+        >
+          <div class="stage-floor" aria-hidden="true"></div>
+          <img class="hostage-image hostage-start" src="./img/guy_start.png" alt="A person tied to a chair" />
+          <img class="hostage-image hostage-victory" src="./img/guy_victory.png" alt="" />
+          <img class="hostage-image hostage-death" src="./img/guy_death.png" alt="" />
+
+          <div class="gun" role="img" aria-label="A weapon assembling with each incorrect guess">
+            <img src="./img/detala1.png" alt="" />
+            <img src="./img/detala2.png" alt="" />
+            <img src="./img/detala3.png" alt="" />
+            <img src="./img/detala4.png" alt="" />
+            <img src="./img/detala5.png" alt="" />
+          </div>
+        </section>
+
+        <ol id="letters" class="word-display" aria-label="Word to guess"></ol>
+
+        <div id="health" class="health" role="img" aria-label="0 of 5 incorrect guesses">
+          <span class="circle" aria-hidden="true"></span>
+          <span class="circle" aria-hidden="true"></span>
+          <span class="circle" aria-hidden="true"></span>
+          <span class="circle" aria-hidden="true"></span>
+          <span class="circle" aria-hidden="true"></span>
         </div>
-      </form>
+
+        <section id="result-message" class="result-message" aria-live="polite" hidden>
+          <h2 id="result-title"></h2>
+          <p id="result-copy"></p>
+        </section>
+
+        <form id="guess-form" class="guess-form" aria-label="Guess a letter" novalidate>
+          <label for="guess-input">Enter one letter</label>
+          <div class="guess-controls">
+            <input
+              id="guess-input"
+              name="guess"
+              type="text"
+              maxlength="1"
+              autocapitalize="none"
+              autocomplete="off"
+              autocorrect="off"
+              spellcheck="false"
+              disabled
+            />
+            <button id="submit-guess" class="button button-primary" type="submit" disabled>
+              Guess
+            </button>
+          </div>
+        </form>
+      </div>
     </main>
 
     <div id="screen-flash" class="screen-flash" aria-hidden="true"></div>
