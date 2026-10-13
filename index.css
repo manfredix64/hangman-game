@@ -756,22 +756,3 @@ input:focus-visible {
     min-height: 2.2rem;
   }
 }
-
-@media (prefers-reduced-motion: reduce) {
-  *,
-  *::before,
-  *::after {
-    scroll-behavior: auto !important;
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
-  }
-
-  .spotlight-scene.is-lighting-up .spotlight-cone {
-    animation: spotlight-fade-in 320ms ease-out forwards !important;
-  }
-
-  .spotlight-scene.is-lighting-up .spotlight-bulb {
-    animation: bulb-fade-in 320ms ease-out forwards !important;
-  }
-}

@@ -2,9 +2,8 @@ import { getFallbackWord, HangmanGame, MAX_MISTAKES, normalizeWord } from "./gam
 
 const RANDOM_WORD_URL = "https://random-word-api.herokuapp.com/word";
 const REQUEST_TIMEOUT_MS = 8000;
-const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-const TRANSITION_MS = prefersReducedMotion ? 0 : 700;
-const WARNING_HOLD_MS = prefersReducedMotion ? 0 : 1800;
+const TRANSITION_MS = 700;
+const WARNING_HOLD_MS = 1800;
 
 const elements = {
   spotlightScene: document.querySelector(".spotlight-scene"),
