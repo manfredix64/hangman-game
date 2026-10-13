@@ -81,6 +81,20 @@ test("the game ends safely at the mistake limit and reveals the word", () => {
   assert.equal(game.guess("c").type, "inactive");
 });
 
+
+test("guessed letters are recorded once in the order they were tried", () => {
+  const game = new HangmanGame();
+  game.start("banana");
+
+  game.guess("n");
+  game.guess("z");
+  game.guess("a");
+
+  assert.deepEqual(game.snapshot.guessedLetters, ["n", "z", "a"]);
+  assert.equal(game.guess("Z").type, "duplicate");
+  assert.deepEqual(game.snapshot.guessedLetters, ["n", "z", "a"]);
+});
+
 test("starting a new round clears the old state", () => {
   const game = new HangmanGame();
   game.start("cat");

@@ -15,6 +15,7 @@ const elements = {
   wordDisplay: document.getElementById("letters"),
   healthIndicator: document.getElementById("health"),
   healthCircles: [...document.querySelectorAll(".circle")],
+  guessedLetters: document.getElementById("guessed-letters"),
   gunLayers: [...document.querySelectorAll(".gun img")],
   guessForm: document.getElementById("guess-form"),
   guessInput: document.getElementById("guess-input"),
@@ -140,6 +141,29 @@ function renderGame() {
   elements.healthCircles.forEach((circle, index) => {
     circle.classList.toggle("full", index < state.wrongGuesses);
   });
+
+  const guessedLetterElements = state.guessedLetters.map((letter) => {
+    const isCorrect = game.answer.includes(letter);
+    const item = document.createElement("span");
+    item.className = `guessed-letter ${isCorrect ? "is-correct" : "is-incorrect"}`;
+    item.textContent = letter.toUpperCase();
+    item.title = isCorrect ? "Correct guess" : "Incorrect guess";
+    item.setAttribute("role", "listitem");
+    item.setAttribute(
+      "aria-label",
+      `${letter.toUpperCase()}, ${isCorrect ? "correct" : "incorrect"} guess`,
+    );
+    return item;
+  });
+
+  if (guessedLetterElements.length === 0) {
+    const empty = document.createElement("span");
+    empty.className = "guessed-empty";
+    empty.textContent = "No guesses yet";
+    elements.guessedLetters.replaceChildren(empty);
+  } else {
+    elements.guessedLetters.replaceChildren(...guessedLetterElements);
+  }
 
   elements.gunLayers.forEach((layer, index) => {
     layer.style.opacity = index < state.wrongGuesses ? "1" : "0";
