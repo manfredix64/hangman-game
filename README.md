@@ -35,7 +35,7 @@ node --check index.js
 node --check game.js
 ```
 
-`test.html` remains a standalone visual experiment. Its warm spotlight is integrated into the main game and flickers on after the intro and flashing-lights warning sequence; it stays off on the intro screens. The character artwork is in `img/guy_start.png`, `img/guy_victory.png`, and `img/guy_death.png`. The main scene uses the full viewport as a textured wall stage, with the HUD arranged away from the central character and gun artwork. It assembles the gun across five wrong guesses and switches to the rescue or loss artwork when the round ends. For debugging, the correct answer is logged to the browser console each time a new round starts.
+`test.html` remains a standalone visual experiment. Its warm spotlight is integrated into the main game and flickers on after the intro and flashing-lights warning sequence; it stays off on the intro screens. The character artwork is in `img/guy_start.png`, `img/guy_victory.png`, and `img/guy_death.png`. The main scene uses the full viewport as a textured wall stage, with the HUD arranged away from the central character and gun artwork. The shotgun is deliberately scaled down and positioned around head height; the lamp beam is sized relative to viewport height to keep its shape consistent across desktop display sizes. The start, victory, and death character images share an identical 666 × 374 pixel canvas so transitions stay aligned. It assembles the gun across five wrong guesses and switches to the rescue or loss artwork when the round ends. For debugging, the correct answer is logged to the browser console each time a new round starts.
 
 ## Credits
 

@@ -78,8 +78,15 @@ body.spotlight-active {
   position: absolute;
   top: 65px;
   left: 50%;
-  width: min(1750px, 180vw);
-  height: min(650px, 82vh);
+  /*
+   * Size the beam from viewport height, not fixed pixel caps. This keeps the
+   * cone's proportions consistent on different desktop monitor dimensions
+   * and wide enough to reach both sides of ultrawide screens.
+   */
+  width: 320vh;
+  height: calc(100vh - 65px);
+  width: 320dvh;
+  height: calc(100dvh - 65px);
   transform: translateX(-50%);
   background: linear-gradient(
     to bottom,
@@ -423,9 +430,11 @@ input:focus-visible {
 .gun {
   position: absolute;
   z-index: 4;
-  top: -2%;
-  right: -2%;
-  width: min(86vw, 1450px);
+  /* Keep the shotgun clear of the hostage's face and level with the head. */
+  top: 3vh;
+  right: auto;
+  left: clamp(20rem, 43vh, 34rem);
+  width: clamp(23rem, 55vh, 34rem);
   aspect-ratio: 290 / 210;
   margin: 0;
   opacity: 1;
